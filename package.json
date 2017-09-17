@@ -1,0 +1,26 @@
+{
+  "name": "docker-log-monitor",
+  "version": "1.0.0",
+  "description": "Util for streaming logs from docker and pass as metrics to minitoring systemd",
+  "main": "cli/run",
+  "bin": {
+    "docker-log-monitor": "./cli/run-forever"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andre487/docker-log-monitor.git"
+  },
+  "author": "andre487",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andre487/docker-log-monitor/issues"
+  },
+  "homepage": "https://github.com/andre487/docker-log-monitor#readme",
+  "dependencies": {
+    "argparse": "^1.0.9",
+    "node-dogstatsd": "0.0.6"
+  }
+}
