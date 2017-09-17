@@ -11,7 +11,7 @@ Install:
 Usage:
 
 ```
-usage: run [-h] [-v] [--monitor {data-dog}] containerName [containerName ...]
+usage: docker-log-monitor [-h] [-v] [--monitor {data-dog}] containerName [containerName ...]
 
 Util for streaming logs from docker and pass as metrics to minitoring systemd
 
