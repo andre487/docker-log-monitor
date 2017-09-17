@@ -1,4 +1,2 @@
 #!/usr/bin/env bash
-dir="$(cd "$(dirname "$0")" && pwd)"
-
-forever start -m 1024 "$dir/run" $@
+forever start -m 10 "$(which docker-log-monitor)" $@
