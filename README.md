@@ -1,6 +1,13 @@
 # docker-log-monitor
 Util for streaming logs from docker and pass as metrics to minitoring systemd
 
+Install:
+
+```
+  $ npm install -g docker-log-monitor
+  $ docker-log-monitor container1 container2 containerN
+```
+
 Usage:
 
 ```
