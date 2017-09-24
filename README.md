@@ -12,8 +12,8 @@ Install:
 Usage:
 
 ```
-usage: docker-log-monitor [-h] [-v] [--monitor {data-dog}] [--pass-pseudo]
-           containerName [containerName ...]
+usage: docker-log-monitor [-h] [-v] [--monitor {data-dog}] [--pass-pseudo] [--all]
+           [containerName [containerName ...]]
 
 Util for streaming logs from docker and pass as metrics to minitoring systemd
 
@@ -26,4 +26,5 @@ Optional arguments:
   --monitor {data-dog}
   --pass-pseudo         Pass pseudo increment for passing signal names to
                         system
+  --all                 Listen for all containers
 ```
