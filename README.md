@@ -8,6 +8,11 @@ Util for streaming logs from docker and pass as metrics to monitoring systems
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f3284c31feccd239b381/test_coverage)](https://codeclimate.com/github/andre487/docker-log-monitor/test_coverage)
 
 
+Features:
+
+  * Count statuses in logs: each debug, info, error, etc. becomes `docker-log-monitor.status.${name}` with tag `container:${containerName}`
+  * Send timings: each line with `Measure::duration::<label>: <time>` becomes `docker-log-monitor.timing.${label}` with timing and tag `container:${containerName}`
+
 Install:
 
 ```
