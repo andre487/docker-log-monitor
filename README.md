@@ -4,6 +4,7 @@ Util for streaming logs from docker and pass as metrics to monitoring systems
 [![Build Status](https://travis-ci.org/andre487/docker-log-monitor.svg?branch=master)](https://travis-ci.org/andre487/docker-log-monitor)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f3284c31feccd239b381/maintainability)](https://codeclimate.com/github/andre487/docker-log-monitor/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f3284c31feccd239b381/test_coverage)](https://codeclimate.com/github/andre487/docker-log-monitor/test_coverage)
+[![npm version](https://badge.fury.io/js/docker-log-monitor.svg)](http://badge.fury.io/js/docker-log-monitor)
 
 
 Features:
