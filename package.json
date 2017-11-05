@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "nodemon ./lib/index.js --all --pass-pseudo",
+    "lint": "eslint .",
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha ./test/**/*.spec.js --timeout=3000",
     "prepublish": "npm test"
   },
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "eslint": "^4.10.0",
     "mocha": "^4.0.1",
     "nodemon": "^1.12.1",
     "nyc": "^11.3.0",
