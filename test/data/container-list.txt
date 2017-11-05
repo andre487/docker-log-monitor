@@ -1,0 +1,4 @@
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS              PORTS               NAMES
+1d353cafc38f        debian:9              "bash"                   2 seconds ago       Up 1 second                             condescending_goldberg
+d67fb8374bca        mongo:latest          "/entrypoint.sh mo..."   20 seconds ago      Up 19 seconds       27017/tcp           dreamy_tesla
+deb739ad01fa        redis:3.2.10-alpine   "docker-entrypoint..."   About an hour ago   Up About an hour    6379/tcp            hopeful_joliot
