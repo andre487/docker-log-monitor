@@ -185,6 +185,7 @@ describe('LogRecordsHandler', function() {
             2017-10-01	CRITICAL	message
             2017-10-01	CRIT	message
             2017-10-01	FATAL	message
+            2017-10-01	INFO	Measure::duration::qux: 18806.107998
         `;
 
         it('should increase statuses by keywords', () => {
@@ -199,11 +200,24 @@ describe('LogRecordsHandler', function() {
 
             assert.propertyVal(statuses, 'trace', 1);
             assert.propertyVal(statuses, 'debug', 2);
-            assert.propertyVal(statuses, 'info', 1);
+            assert.propertyVal(statuses, 'info', 2);
             assert.propertyVal(statuses, 'warning', 2);
             assert.propertyVal(statuses, 'error', 2);
             assert.propertyVal(statuses, 'critical', 2);
             assert.propertyVal(statuses, 'fatal', 1);
+        });
+
+        it('should send timing', () => {
+            const inst = new LogRecordsHandler({monitor, containerName: 'foo'});
+            inst.handleLogData(logChunk);
+
+            assert.calledOnce(monitor.sendTiming);
+
+            const [containerName, markName, time] = monitor.sendTiming.args[0];
+
+            assert.equal(containerName, 'foo');
+            assert.equal(markName, 'qux');
+            assert.equal(time, 18806.107998);
         });
     });
 

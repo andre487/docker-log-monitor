@@ -36,4 +36,20 @@ describe('DataDog monitor', function() {
             assert.callCount(dogStatsD.StatsD.prototype.increment, statusCount * 2);
         });
     });
+
+    describe('#sendTiming()', () => {
+        beforeEach(() => {
+            sandbox.stub(dogStatsD.StatsD.prototype, 'timing');
+        });
+
+        it('should send timing with names and tags', () => {
+            dataDogMonitor.sendTiming('foo', 'bar', 100);
+
+            const signal = 'docker-log-monitor.timing.bar';
+            const tags = [`container:foo`];
+
+            assert.calledOnce(dogStatsD.StatsD.prototype.timing);
+            assert.calledWith(dogStatsD.StatsD.prototype.timing, signal, 100, tags);
+        });
+    });
 });
