@@ -1,5 +1,7 @@
 # docker-log-monitor
-Util for streaming logs from docker and pass as metrics to minitoring systemd
+Util for streaming logs from docker and pass as metrics to monitoring systems
+
+[![Build Status](https://travis-ci.org/andre487/docker-log-monitor.svg?branch=master)](https://travis-ci.org/andre487/docker-log-monitor)
 
 Install:
 
