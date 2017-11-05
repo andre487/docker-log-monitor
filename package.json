@@ -13,9 +13,12 @@
   },
   "scripts": {
     "start": "nodemon ./lib/index.js --all --pass-pseudo",
-    "test": "mocha ./test/**/*.spec.js",
+    "test": "nyc --reporter=html --reporter=text mocha ./test/**/*.spec.js --timeout=3000",
     "prepublish": "npm test"
   },
+  "nyc.exclude": [
+    "**/*.spec.js"
+  ],
   "author": "andre487",
   "license": "MIT",
   "bugs": {
@@ -30,6 +33,7 @@
     "chai": "^4.1.2",
     "mocha": "^4.0.1",
     "nodemon": "^1.12.1",
+    "nyc": "^11.3.0",
     "sinon": "^4.1.1"
   }
 }

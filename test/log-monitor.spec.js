@@ -191,6 +191,22 @@ describe('LogMonitor', function() {
             assert.deepEqual(handlerArgs.containers, ['foo', 'bar']);
             assert.deepEqual(handlerArgs.passPseudo, [true, true]);
         });
+
+        it('should call #onStopHandling() when handler calls hook', () => {
+            sandbox.stub(LogMonitor.prototype, 'onStopHandling');
+
+            const inst = new LogMonitor({ containerName: ['foo', 'bar'] }, FakeRecordsHandlerClass);
+            inst.startListenToContainers(['foo', 'bar']);
+
+            const handlerArgs = getFakeRecordHandlerArgs();
+
+            assert.lengthOf(handlerArgs.stopHandlers, 2);
+
+            handlerArgs.stopHandlers[0]('foo');
+
+            assert.calledOnce(LogMonitor.prototype.onStopHandling);
+            assert.calledWith(LogMonitor.prototype.onStopHandling, 'foo');
+        });
     });
 
     describe('#listenToAllNewContainers()', () => {
