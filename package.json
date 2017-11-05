@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "nodemon ./lib/index.js --all --pass-pseudo",
-    "test": "nyc --reporter=html --reporter=text mocha ./test/**/*.spec.js --timeout=3000",
+    "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha ./test/**/*.spec.js --timeout=3000",
     "prepublish": "npm test"
   },
   "nyc.exclude": [
